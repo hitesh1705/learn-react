@@ -8,17 +8,20 @@ export default function Scoreboard() {
   });
 
   function handlePlusClick() {
-    player.likescore++;
+    setPlayer({
+      ...player,
+      likescore: player.likescore + 1,
+    });
   }
 
-  function handleFirstNameChange(e: { target: { value: string; }; }) {
+  function handleFirstNameChange(e: { target: { value: string } }) {
     setPlayer({
       ...player,
       firstName: e.target.value,
     });
   }
 
-  function handleLastNameChange(e: { target: { value: string; }; }) {
+  function handleLastNameChange(e: { target: { value: string } }) {
     setPlayer({
       ...player,
       lastName: e.target.value,
